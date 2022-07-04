@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "sysdigcl1-4026"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "sysdigcl1-4026"
+  template:
+    metadata:
+      labels:
+        app: "sysdigcl1-4026"
+    spec:
+      containers:
+        - name: "sysdigcl1-4026"
+          image: "syscontreg.azurecr.io/sysdigcl1"
+          ports:
+          - containerPort: 80
